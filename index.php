@@ -16,7 +16,7 @@
                 $param = preg_replace("/\s*!gr/", "", $param);
                 $url = "index.php?param=".urlencode("!g site:reddit.com $param");
 
-        } else if(preg_match('/!bea/', $param)) {
+        } else if(preg_match('/!beta/', $param)) {
                 $param = preg_replace("/\s*!gr/", "", $param);
                 $url = "index.php?param=".urlencode("!g site:betaarchive.com $param");
 
