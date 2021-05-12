@@ -46,7 +46,7 @@
 
 		} else if(preg_match('/!domian/', $param)) {
 			$param = preg_replace("/\s*!domian/", "", $param);
-			$url = "$baseurldomian/?suche1=".urlencode($param);
+			$url = "$baseurl/domian/?suche1=".urlencode($param);
 
 		} else if(preg_match('/!axp/', $param)) {
 			$param = preg_replace("/\s*!axp/", "", $param);
