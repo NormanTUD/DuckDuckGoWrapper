@@ -52,7 +52,7 @@
 			$param = preg_replace("/\s*!axp/", "", $param);
 			$url = "$baseurl/axp/?suche1=".urlencode($param);
 
-		} else if(preg_match('^/r\/[a-z]+\//$', $param)) {
+		} else if(preg_match('/^r\/[a-z]+\/$/', $param)) {
 			$url = "https://reddit.com/".$param;
 
 		} else if(preg_match('/!/', $param)) {
