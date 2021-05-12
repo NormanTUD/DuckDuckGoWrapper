@@ -1,4 +1,7 @@
 <?php
+	$baseurl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+	$current_link = $baseurl.$_SERVER[REQUEST_URI];
+
 	if(array_key_exists("param", $_GET)) {
 		$param = $_GET['param'];
 
@@ -41,6 +44,14 @@
 			$param = preg_replace("/\s*!cpan/", "", $param);
 			$url = "index.php?param=".urlencode("!g site:cpan.org $param");
 
+		} else if(preg_match('/!domian/', $param)) {
+			$param = preg_replace("/\s*!domian/", "", $param);
+			$url = "$baseurldomian/?suche1=".urlencode($param);
+
+		} else if(preg_match('/!axp/', $param)) {
+			$param = preg_replace("/\s*!axp/", "", $param);
+			$url = "$baseurl/axp/?suche1=".urlencode($param);
+
 		} else if(preg_match('/!/', $param)) {
 			$url = "https://duckduckgo.com/?t=ffsb&q=".urlencode($param)."&atb=v230-1&ia=calculator";
 		}
@@ -48,7 +59,6 @@
 		header('Location: '.$url);
 		exit;
 	} else {
-		$current_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 		print htmlentities("$current_link?param=%s");
 	}
 ?> 
