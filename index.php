@@ -66,6 +66,20 @@
 		header('Location: '.$url);
 		exit;
 	} else {
-		print htmlentities("$current_link?param=%s");
+?>
+		<script>
+			function copy_to_clipboard(text) {
+				var dummy = document.createElement("textarea");
+				document.body.appendChild(dummy);
+				dummy.value = text;
+				dummy.select();
+				document.execCommand("copy");
+				document.body.removeChild(dummy);
+			}
+		</script>
+
+<?php
+		$copy = "$current_link?param=%s";
+		print "<span onclick='copy_to_clipboard(\"$copy\")'>".htmlentities($copy)."</span>";
 	}
 ?> 
