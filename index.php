@@ -48,6 +48,10 @@
 			$param = preg_replace("/\s*!cpan/", "", $param);
 			$url = "index.php?param=".urlencode("!g site:cpan.org $param");
 
+		} else if(preg_match('/!peterson/', $param)) {
+			$param = preg_replace("/\s*!peterson/", "", $param);
+			$url = "$baseurl/peterson/?suche1=".urlencode($param);
+
 		} else if(preg_match('/!domian/', $param)) {
 			$param = preg_replace("/\s*!domian/", "", $param);
 			$url = "$baseurl/domian/?suche1=".urlencode($param);
