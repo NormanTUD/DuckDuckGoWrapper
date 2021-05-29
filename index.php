@@ -16,6 +16,10 @@
 			$param = preg_replace("/\s*!dwiki/", "", $param);
 			$url = "https://de.wikipedia.org/w/index.php?search=".urlencode($param)."&title=Spezial%3ASuche&fulltext=Suchen&ns0=1";
 
+		} else if(preg_match('/!ewiki/', $param)) {
+			$param = preg_replace("/\s*!ewiki/", "", $param);
+			$url = "https://en.wikipedia.org/w/index.php?search=".urlencode($param)."&title=Special%3ASearch&go=Go&ns0=1";
+
 		} else if(preg_match('/!gr/', $param)) {
 			$param = preg_replace("/\s*!gr/", "", $param);
 			$url = "index.php?param=".urlencode("!g site:reddit.com $param");
