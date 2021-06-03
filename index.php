@@ -44,6 +44,14 @@
 			$param = preg_replace("/\s*!genius/", "", $param);
 			$url = "index.php?param=".urlencode("!g site:genius.com $param");
 
+		} else if(preg_match('/!pypi/', $param)) {
+			$param = preg_replace("/\s*!pypi/", "", $param);
+			$url = "index.php?param=".urlencode("!g site:pypi.org $param");
+
+		} else if(preg_match('/!github/', $param)) {
+			$param = preg_replace("/\s*!github/", "", $param);
+			$url = "index.php?param=".urlencode("!g site:github.com $param");
+
 		} else if(preg_match('/!cpan/', $param)) {
 			$param = preg_replace("/\s*!cpan/", "", $param);
 			$url = "index.php?param=".urlencode("!g site:cpan.org $param");
