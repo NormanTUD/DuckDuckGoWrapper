@@ -12,6 +12,10 @@
 			$param = preg_replace("/\s*!ekz/", "", $param);
 			$url = "https://www.ebay-kleinanzeigen.de/s-".urlencode($param)."/k0";
 
+		} else if(preg_match('/!redbubble/', $param)) {
+			$param = preg_replace("/\s*!redbubble/", "", $param);
+			$url = "https://www.redbubble.com/shop/?query=".urlencode($param)."&ref=search_box";
+
 		} else if(preg_match('/!dwiki/', $param)) {
 			$param = preg_replace("/\s*!dwiki/", "", $param);
 			$url = "https://de.wikipedia.org/w/index.php?search=".urlencode($param)."&title=Spezial%3ASuche&fulltext=Suchen&ns0=1";
