@@ -64,6 +64,10 @@
 			$param = preg_replace("/\s*!peterson/", "", $param);
 			$url = "$baseurl/peterson/?suche1=".urlencode($param);
 
+		} else if(preg_match('/!ddomian/', $param)) {
+			$param = preg_replace("/\s*!ddomian/", "", $param);
+			$url = "$baseurl/domian/?hastimecomment=1&suche1=".urlencode($param);
+
 		} else if(preg_match('/!domian/', $param)) {
 			$param = preg_replace("/\s*!domian/", "", $param);
 			$url = "$baseurl/domian/?suche1=".urlencode($param);
