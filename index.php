@@ -1,6 +1,6 @@
 <?php
 	$baseurl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-	$current_link = $baseurl.$_SERVER[REQUEST_URI];
+	$current_link = $baseurl.$_SERVER["REQUEST_URI"];
 
 	if(array_key_exists("param", $_GET)) {
 		$param = $_GET['param'];
